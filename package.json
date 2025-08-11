@@ -9,8 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@metamask/providers": "^22.1.0",
+    "ethers": "^6.15.0",
     "next": "15.4.6",
     "object-hash": "^3.0.0",
+    "prettier": "^3.6.2",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "web3": "^4.16.0"
@@ -19,9 +22,10 @@
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
+    "@types/object-hash": "^3.0.6",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^9",
+    "eslint": "^9.33.0",
     "eslint-config-next": "15.4.6",
     "tailwindcss": "^4",
     "typescript": "^5"
