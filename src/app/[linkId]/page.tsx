@@ -5,7 +5,7 @@ import { useParams } from "next/navigation";
 import Image from "next/image";
 import { getLink, payLink, connectWallet } from "@/services/Web3Service";
 
-// Interface para tipar os dados do link, garantindo a segurança de tipo
+
 interface LinkData {
     url: string;
     owner: string;
@@ -13,27 +13,23 @@ interface LinkData {
 }
 
 export default function LinkShieldPage() {
-    // useParams retorna um objeto com os parâmetros da URL, que podem ser strings ou arrays de strings
-    // Usamos um type assertion para indicar que o linkId será uma string.
     const params = useParams() as { linkId: string };
     const [message, setMessage] = useState<string>("Buscando dados do link... aguarde...");
-    // O estado do link pode ser LinkData ou null, então usamos um tipo de união
     const [link, setLink] = useState<LinkData | null>(null);
 
     useEffect(() => {
         async function loadLink() {
-            // Verificamos se o linkId existe para evitar chamadas desnecessárias
+            
             if (!params.linkId) {
                 setMessage("ID do link não encontrado na URL.");
                 return;
             }
 
             try {
-                // A função connectWallet já lança um erro se a conexão falhar
+                
                 await connectWallet();
                 const linkData = await getLink(params.linkId);
 
-                // Se o linkData.url tiver um valor, significa que o usuário já tem acesso.
                 if (linkData.url) {
                     setMessage("Acesso garantido. Redirecionando...");
                     window.location.href = linkData.url;
@@ -42,14 +38,11 @@ export default function LinkShieldPage() {
                     setMessage(`Para acessar este link, pague a taxa de ${linkData.fee} wei.`);
                 }
             } catch (err: unknown) {
-                // Tratamento seguro de erro para TypeScript
                 const errorMessage = err instanceof Error ? err.message : "Ocorreu um erro desconhecido.";
                 setMessage(`Erro: ${errorMessage}`);
                 console.error(err);
             }
         }
-
-        // Chamamos a função ao carregar a página
         loadLink();
     }, [params.linkId]);
 
@@ -63,7 +56,6 @@ export default function LinkShieldPage() {
             await payLink(params.linkId, link.fee);
             setMessage("Pagamento realizado! Redirecionando...");
 
-            // Busca os dados atualizados para obter a URL completa
             const updatedLink = await getLink(params.linkId);
             window.location.href = updatedLink.url;
         } catch (err: unknown) {

@@ -1,7 +1,6 @@
 import { ethers, JsonRpcSigner, Contract, BrowserProvider, TransactionResponse } from "ethers";
-import LinkShieldABI from "../abis/LinkShield.json"; // Confirme se o caminho está correto
+import LinkShieldABI from "../abis/LinkShield.json"; 
 
-// Certifique-se de que o ABI é um tipo válido, como um array de objetos.
 const CONTRACT_ABI = LinkShieldABI as ethers.InterfaceAbi;
 const CONTRACT_ADDRESS = "0x345ccd93d0526017b2b6441dd86266014e3eb71f";
 
