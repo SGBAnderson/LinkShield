@@ -6,7 +6,7 @@ The contract is written in Solidity, a programming language for smart contracts 
 
 Imagine LinkShield as a digital doorman. You can register a link (such as to a file, video, or website) and set a price for it. Anyone who wants to access your link must pay that fee. The contract acts as an intermediary: it receives the payment from the interested party, ensures that the person pays the correct price, and then grants them permission to view the link. You, as the owner, receive the payment money, minus a small commission that the doorman (the contract) charges for its service.
 
-## Data Structures and Variablesstruct Link: 
+## Data Structures and Variablesstruct Link
 Defines a data structure to store information about each link. It includes the URL (string url), the owner's address (address owner), and the access fee (uint256 fee).commission: A public variable that defines the fixed commission charged by the contract, of 1 Wei (the smallest unit of ether).links: A mapping that stores Link objects. Each link is identified by a unique linkId (a string).hasAccess: Another mapping that tracks who has access to which link. It associates a linkId to a user address and a boolean value (true or false).admin: The address of the contract creator. It is defined in the constructor and cannot be changed, making it an immutable address.
 
 ## Main Functions 
