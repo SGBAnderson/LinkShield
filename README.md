@@ -2,7 +2,7 @@
 ## Technical Explanation
 This contract works as a link protection service on the Blockchain. It allows users to register private links and charge a fee from other users to grant access to them. The contract retains a small commission for each payment.
 
-The contract is written in Solidity, a programming language for smart contracts on the Ethereum blockchain.
+The contract is written in Solidity, a programming language for smart contracts on the Ethereum blockchain...
 
 Imagine LinkShield as a digital doorman. You can register a link (such as to a file, video, or website) and set a price for it. Anyone who wants to access your link must pay that fee. The contract acts as an intermediary: it receives the payment from the interested party, ensures that the person pays the correct price, and then grants them permission to view the link. You, as the owner, receive the payment money, minus a small commission that the doorman (the contract) charges for its service.
 
