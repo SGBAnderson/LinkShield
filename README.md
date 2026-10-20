@@ -1,6 +1,6 @@
 
 ## Technical Explanation
-This contract works as a link protection service on the Blockchain. It allows users to register private links and charge a fee from other users to grant access to them. The contract retains a small commission for each payment.
+This contract works as a link protection service on the Blockchain. It allows users to register private links and charge a fee from other users to grant access to them. The contract retains a small commission for each payment..
 
 The contract is written in Solidity, a programming language for smart contracts on the Ethereum blockchain.
 
