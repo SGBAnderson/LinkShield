@@ -15,7 +15,6 @@ Defines a data structure to store information about each link. It includes the U
 - **getLink**(string calldata linkId) public view returns (Link memory): This function allows anyone to call and retrieve the link information. If the link is free (fee == 0), it directly returns the URL. If it is paid, it first checks if the user calling the function already has access. If not, it returns the Link object with the url field empty, protecting the information.
 - **withdraw()**: A function exclusive to the contract admin. It allows them to withdraw all accumulated commissions in the contract to their wallet.
 
-
 ## Technical Explanation
 - Next.js
 - React
